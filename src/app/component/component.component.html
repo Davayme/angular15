@@ -1,0 +1,33 @@
+<div>
+    <form [formGroup]="agencyForm" (ngSubmit)="onSubmit()">
+      <label for="name">Nombre:</label>
+      <input id="name" formControlName="name" type="text">
+      
+      <label for="address">Dirección:</label>
+      <input id="address" formControlName="address" type="text">
+      
+      <button type="submit">Guardar</button>
+    </form>
+  </div>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Dirección</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let agency of agencies">
+        <td>{{ agency.id }}</td>
+        <td>{{ agency.name }}</td>
+        <td>{{ agency.address }}</td>
+        <td>
+          <button (click)="editAgency(agency)">Editar</button>
+          <button (click)="deleteAgency(agency.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
