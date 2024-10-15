@@ -1,10 +1,10 @@
 <div>
-    <form [formGroup]="agencyForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
       <label for="name">Nombre:</label>
       <input id="name" formControlName="name" type="text">
       
-      <label for="address">Dirección:</label>
-      <input id="address" formControlName="address" type="text">
+      <label for="lastname">Apellido:</label>
+      <input id="lastname" formControlName="lastname" type="text">
       
       <button type="submit">Guardar</button>
     </form>
@@ -20,13 +20,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let agency of agencies">
-        <td>{{ agency.id }}</td>
-        <td>{{ agency.name }}</td>
-        <td>{{ agency.address }}</td>
+      <tr *ngFor="let d of clients">
+        <td>{{ d.id }}</td>
+        <td>{{ d.name }}</td>
+        <td>{{ d.lastname }}</td>
         <td>
-          <button (click)="editAgency(agency)">Editar</button>
-          <button (click)="deleteAgency(agency.id)">Eliminar</button>
+          <button (click)="editClient(d)">Editar</button>
+          <button (click)="deleteClient(d.id)">Eliminar</button>
         </td>
       </tr>
     </tbody>

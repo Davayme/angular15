@@ -10,7 +10,6 @@ export class Service {
 
   constructor(private http: HttpClient) { }
 
-  // Crear un nuevo cliente
   create(data: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, data, {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })

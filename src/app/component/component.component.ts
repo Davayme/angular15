@@ -15,7 +15,7 @@ export class ComponentComponent implements OnInit {
   constructor(private service: Service, private fb: FormBuilder) {
     this.clientForm = this.fb.group({
       name: [''],
-      address: ['']
+      lastname: ['']
     });
   }
 
